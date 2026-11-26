@@ -5,7 +5,9 @@ import { fileURLToPath } from 'node:url';
 import os from 'node:os';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-export const ROOT_DIR = path.resolve(__dirname, '../..');
+export const ROOT_DIR = process.env.VERCEL || process.env.LAMBDA_TASK_ROOT
+  ? process.cwd()
+  : path.resolve(__dirname, '../..');
 
 export function loadEnv(customEnvPath = null) {
   const envPath = customEnvPath || path.join(ROOT_DIR, '.env');

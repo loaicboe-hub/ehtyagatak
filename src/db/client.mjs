@@ -61,9 +61,18 @@ export function closeDb() {
   }
 }
 
+import { SQLITE_SCHEMA_SQL } from './sqlite-schema-raw.mjs';
+
 export function applyMigrations(db = getDb()) {
-  const schemaPath = path.join(ROOT_DIR, 'src/db/sqlite-schema.sql');
-  const sql = fs.readFileSync(schemaPath, 'utf8');
+  let sql = SQLITE_SCHEMA_SQL;
+  try {
+    const schemaPath = path.join(ROOT_DIR, 'src/db/sqlite-schema.sql');
+    if (fs.existsSync(schemaPath)) {
+      sql = fs.readFileSync(schemaPath, 'utf8');
+    }
+  } catch {
+    sql = SQLITE_SCHEMA_SQL;
+  }
   db.exec(sql);
 }
 

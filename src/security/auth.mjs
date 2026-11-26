@@ -6,9 +6,25 @@ import { queryAll, queryOne, runSql } from '../db/client.mjs';
 import { generateOpaqueToken, hashTokenSha256 } from '../../foundation/security/token-utils.mjs';
 import { generateCsrfToken, verifyCsrfToken } from '../../foundation/security/csrf.mjs';
 
-const secHeaders = JSON.parse(
-  fs.readFileSync(path.join(ROOT_DIR, 'foundation/security/security-headers.json'), 'utf8')
-);
+const fallbackSecurityHeaders = {
+  headers: {
+    'X-Content-Type-Options': 'nosniff',
+    'X-Frame-Options': 'DENY',
+    'Referrer-Policy': 'strict-origin-when-cross-origin',
+    'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+    'Strict-Transport-Security': 'max-age=63072000; includeSubDomains; preload'
+  }
+};
+
+let secHeaders = fallbackSecurityHeaders;
+try {
+  const hPath = path.join(ROOT_DIR, 'foundation/security/security-headers.json');
+  if (fs.existsSync(hPath)) {
+    secHeaders = JSON.parse(fs.readFileSync(hPath, 'utf8'));
+  }
+} catch {
+  secHeaders = fallbackSecurityHeaders;
+}
 
 export function getSecurityHeaders(opts = {}) {
   const cfg = getEnvConfig();

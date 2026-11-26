@@ -3,11 +3,20 @@ import path from 'node:path';
 import { getDb, applyMigrations, withTransaction, queryOne, runSql } from './client.mjs';
 import { ROOT_DIR } from '../config/env.mjs';
 
+import { RBAC_CONFIG } from '../../config/rbac-raw.mjs';
+
 export function seedDatabase(db = getDb()) {
   applyMigrations(db);
 
-  const rbacPath = path.join(ROOT_DIR, 'config/rbac.json');
-  const rbac = JSON.parse(fs.readFileSync(rbacPath, 'utf8'));
+  let rbac = RBAC_CONFIG;
+  try {
+    const rbacPath = path.join(ROOT_DIR, 'config/rbac.json');
+    if (fs.existsSync(rbacPath)) {
+      rbac = JSON.parse(fs.readFileSync(rbacPath, 'utf8'));
+    }
+  } catch {
+    rbac = RBAC_CONFIG;
+  }
 
   withTransaction(db, () => {
     // 1. Seed Roles & Role Permissions (idempotent)

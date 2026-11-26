@@ -1,14 +1,13 @@
-import fs from 'node:fs';
-import path from 'node:path';
-import { ROOT_DIR } from '../config/env.mjs';
+import arDict from './ar.json' with { type: 'json' };
+import enDict from './en.json' with { type: 'json' };
 import { formatTranslation, resolveTranslationValue } from '../../foundation/i18n/i18n-helper.mjs';
 
 export const PROJECT_LANGUAGES = ['ar', 'en'];
 export const DEFAULT_PROJECT_LANGUAGE = 'ar';
 
 const dictionaries = {
-  ar: JSON.parse(fs.readFileSync(path.join(ROOT_DIR, 'src/i18n/ar.json'), 'utf8')),
-  en: JSON.parse(fs.readFileSync(path.join(ROOT_DIR, 'src/i18n/en.json'), 'utf8'))
+  ar: arDict,
+  en: enDict
 };
 
 export function resolveProjectLanguage(requested) {
