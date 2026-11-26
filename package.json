@@ -1,0 +1,18 @@
+{
+  "name": "ehtyajatak-sustainable-dev",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Ehtyajatak for Sustainable Development — Agricultural Greenhouse Investment Platform, Private Investor Portal, Admin Dashboard & ERP Sync API",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "start": "node src/server.mjs",
+    "db:init": "node src/db/init.mjs",
+    "db:create-admin": "node src/db/create-admin.mjs",
+    "audit:i18n": "node foundation/i18n/translation-audit.mjs && node src/tests/app-i18n-audit.mjs",
+    "test:security": "node foundation/security/security-regression.mjs",
+    "test": "node src/tests/integration-test.mjs"
+  }
+}

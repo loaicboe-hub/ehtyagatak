@@ -1,0 +1,157 @@
+{
+  "_meta": {
+    "code": "de",
+    "direction": "ltr",
+    "verified": false,
+    "status": "foundation_baseline_unverified",
+    "note": "Vor Projektfreigabe prüfen und als verifiziert markieren."
+  },
+  "common": {
+    "skipToContent": "Zum Inhalt springen",
+    "menu": "Menü",
+    "close": "Schließen",
+    "save": "Änderungen speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "create": "Erstellen",
+    "search": "Suchen",
+    "loading": "Wird geladen...",
+    "selectLanguage": "Sprache auswählen",
+    "contactUs": "Kontakt aufnehmen"
+  },
+  "nav": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "modules": "Leistungen",
+    "contact": "Kontakt"
+  },
+  "public": {
+    "metaTitle": "Öffentliches Layout-Grundgerüst",
+    "brandPlaceholder": "Markenname (aus Website-Einstellungen)",
+    "blueprintNotice": "Layout-Entwurf — Branchenspezifisch anpassen und mit Backend verbinden",
+    "heroHeading": "Universelles Website-Grundgerüst",
+    "heroSubtitle": "Ersetzen Sie diese neutrale Struktur durch das kundenspezifische Design, die Seiten und zentrale Website-Einstellungen.",
+    "openAdminShell": "Admin-Entwurf anzeigen"
+  },
+  "contact": {
+    "centralizedHeading": "Zentrale Kontaktverknüpfungen",
+    "centralizedDescription": "Telefon, WhatsApp, E-Mail, Adresse und Öffnungszeiten müssen dynamisch aus Admin-Dashboard -> Website-Einstellungen geladen werden.",
+    "whatsapp": "WhatsApp",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "address": "Adresse",
+    "hours": "Geschäftszeiten",
+    "formHeading": "Anfrageformular-Entwurf",
+    "backendNotice": "Erfordert serverseitige Validierung, CSRF-Schutz und Rate-Limiting vor dem Livegang."
+  },
+  "form": {
+    "fullName": "Vollständiger Name",
+    "email": "E-Mail-Adresse",
+    "phone": "Mobilnummer",
+    "password": "Passwort",
+    "currentPassword": "Aktuelles Passwort",
+    "newPassword": "Neues Passwort",
+    "confirmPassword": "Passwort bestätigen",
+    "message": "Nachricht",
+    "submit": "Nachricht senden"
+  },
+  "validation": {
+    "required": "Dieses Feld ist erforderlich.",
+    "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "invalidPhone": "Bitte geben Sie eine gültige Telefonnummer ein.",
+    "invalidUrl": "Bitte geben Sie eine gültige HTTP- oder HTTPS-URL ein.",
+    "minLength": "Die Eingabe muss mindestens {min} Zeichen umfassen.",
+    "maxLength": "Die Eingabe darf höchstens {max} Zeichen umfassen.",
+    "passwordMismatch": "Die Passwörter stimmen nicht überein.",
+    "passwordNeedsUppercase": "Das Passwort muss mindestens einen Großbuchstaben enthalten.",
+    "passwordNeedsLowercase": "Das Passwort muss mindestens einen Kleinbuchstaben enthalten.",
+    "passwordNeedsNumber": "Das Passwort muss mindestens eine Zahl enthalten.",
+    "passwordTooCommon": "Bitte wählen Sie ein stärkeres, weniger gebräuchliches Passwort.",
+    "invalidFileType": "Dieser Dateityp ist nicht zulässig.",
+    "fileTooLarge": "Die hochgeladene Datei überschreitet die maximal zulässige Größe."
+  },
+  "auth": {
+    "loginTitle": "Anmelden",
+    "logout": "Abmelden",
+    "forgotPassword": "Passwort vergessen",
+    "forgotPasswordHint": "Geben Sie Ihre registrierte E-Mail-Adresse ein, um einmalige Anweisungen zum Zurücksetzen des Passworts zu erhalten.",
+    "resetPassword": "Passwort zurücksetzen",
+    "sendResetLink": "Anweisungen senden",
+    "backToLogin": "Zurück zur Anmeldung",
+    "resetTokenNote": "Ein einmaliges, zeitlich begrenztes Token muss vor dem Aktualisieren des Passwort-Hashs serverseitig geprüft werden.",
+    "rememberMe": "Angemeldet bleiben",
+    "verifyEmail": "E-Mail-Adresse bestätigen",
+    "verifyTitle": "E-Mail-Bestätigung",
+    "verifyPendingNotice": "Bestätigen Sie das einmalige Verifizierungstoken serverseitig.",
+    "resendVerification": "Bestätigungs-E-Mail erneut senden",
+    "registerTitle": "Konto erstellen",
+    "registerDisabledNotice": "Öffentliche Registrierung ist standardmäßig deaktiviert, sofern ALLOW_PUBLIC_REGISTRATION=true nicht aktiviert ist.",
+    "genericResetSent": "Falls ein Konto zu dieser E-Mail-Adresse existiert, wurden Anweisungen zum Zurücksetzen gesendet.",
+    "emailServiceUnavailable": "Der E-Mail-Versand ist derzeit nicht konfiguriert oder nicht verfügbar. Bitte kontaktieren Sie einen Administrator."
+  },
+  "footer": {
+    "summary": "Dynamische Fußzeile aus den zentralen Website-Einstellungen.",
+    "navigation": "Navigation",
+    "contactChannels": "Kontaktkanäle",
+    "languagesSupported": "Sprachen: AR • EN • FR • RU • DE • ES"
+  },
+  "admin": {
+    "metaTitle": "Admin-Dashboard-Grundgerüst",
+    "brand": "Admin-Basis",
+    "blueprintTitle": "Nur Struktur-Entwurf — Backend nicht verbunden:",
+    "blueprintWarning": "Authentifizierung, RBAC-Prüfung, Datenbankabfragen und SMTP-Versand müssen serverseitig implementiert werden. Es werden keine erfundenen Zahlen angezeigt.",
+    "backendRequired": "Server-Endpunkt erforderlich",
+    "separateFromWebsiteSettings": "Getrennt von Website-Einstellungen",
+    "websiteSettingsDesc": "Zentrale Website-Einstellungen (Name, Logo, Favicon, Header/Footer, Navigation, WhatsApp, Kontaktdaten, Sprachen). Getrennt von Kontoeinstellungen.",
+    "accountSettingsDesc": "Persönliches Profil, E-Mail, Mobilnummer, Profilbild, Passwortänderung (mit Prüfung des aktuellen Passworts) und Abmelden anderer aktiver Sitzungen.",
+    "groupCore": "Dashboard",
+    "groupPublishing": "Inhalte & Lokalisierung",
+    "groupConfiguration": "Website-Konfiguration",
+    "groupSecurity": "Zugriff & Sicherheit",
+    "groupPersonal": "Persönliches Konto",
+    "nav": {
+      "overview": "Übersicht",
+      "websiteContent": "Website-Inhalte",
+      "pagesManagement": "Seitenverwaltung",
+      "mediaLibrary": "Mediathek",
+      "translations": "Übersetzungen (6 Sprachen)",
+      "websiteSettings": "Website-Einstellungen",
+      "contactInfo": "Kontaktinformationen",
+      "seoSettings": "SEO-Einstellungen",
+      "userManagement": "Benutzerverwaltung",
+      "rolesPermissions": "Rollen & Berechtigungen",
+      "accountSettings": "Kontoeinstellungen"
+    },
+    "metrics": {
+      "pagesCount": "Veröffentlichte Seiten",
+      "mediaCount": "Mediendateien",
+      "usersCount": "Aktive Benutzer",
+      "missingTranslations": "Fehlende / ungeprüfte Übersetzungen",
+      "requiresDb": "Datenbankabfrage erforderlich",
+      "trackPerLanguage": "Über 6 Sprachen verfolgt"
+    },
+    "table": {
+      "settingGroup": "Gruppe",
+      "managedFields": "Verwaltete Felder",
+      "status": "Status"
+    },
+    "settingsGroups": {
+      "identity": "Marke & Identität",
+      "contact": "Kontaktinformationen",
+      "seo": "SEO & Indexierung"
+    },
+    "status": {
+      "awaitingBackend": "Wartet auf Backend-Integration"
+    },
+    "account": {
+      "changePassword": "Passwort ändern (erfordert aktuelles Passwort & Backend)",
+      "revokeSessions": "Andere aktive Sitzungen abmelden",
+      "profileMobile": "Mobilnummer",
+      "profileAvatar": "Profilbild",
+      "preferredLang": "Bevorzugte Sprache",
+      "activeSessions": "Aktive Sitzungen"
+    }
+  }
+}
+

@@ -1,0 +1,157 @@
+{
+  "_meta": {
+    "code": "en",
+    "direction": "ltr",
+    "verified": false,
+    "status": "foundation_baseline_unverified",
+    "note": "Review and customize per project before marking verified."
+  },
+  "common": {
+    "skipToContent": "Skip to content",
+    "menu": "Menu",
+    "close": "Close",
+    "save": "Save Changes",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "search": "Search",
+    "loading": "Loading...",
+    "selectLanguage": "Select language",
+    "contactUs": "Contact Us"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "modules": "Capabilities",
+    "contact": "Contact"
+  },
+  "public": {
+    "metaTitle": "Foundation Public Shell Blueprint",
+    "brandPlaceholder": "Brand Name (From Website Settings)",
+    "blueprintNotice": "Layout Blueprint — Customize Per Industry & Connect Backend",
+    "heroHeading": "Universal Website Foundation Shell",
+    "heroSubtitle": "Replace this neutral section structure with your client's industry-specific design, pages, and centralized Website Settings.",
+    "openAdminShell": "View Admin Shell Blueprint"
+  },
+  "contact": {
+    "centralizedHeading": "Centralized Contact Bindings",
+    "centralizedDescription": "All phone, WhatsApp, email, physical address, and working-hour outputs must be populated dynamically from Admin Dashboard -> Website Settings.",
+    "whatsapp": "WhatsApp",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "hours": "Working Hours",
+    "formHeading": "Inquiry Form Blueprint",
+    "backendNotice": "Requires server-side validation, CSRF protection, and rate limiting before live submission."
+  },
+  "form": {
+    "fullName": "Full Name",
+    "email": "Email Address",
+    "phone": "Mobile Number",
+    "password": "Password",
+    "currentPassword": "Current Password",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm Password",
+    "message": "Message",
+    "submit": "Send Message"
+  },
+  "validation": {
+    "required": "This field is required.",
+    "invalidEmail": "Please enter a valid email address.",
+    "invalidPhone": "Please enter a valid phone number.",
+    "invalidUrl": "Please enter a valid HTTP or HTTPS URL.",
+    "minLength": "Input must be at least {min} characters.",
+    "maxLength": "Input must not exceed {max} characters.",
+    "passwordMismatch": "Passwords do not match.",
+    "passwordNeedsUppercase": "Password must include at least one uppercase letter.",
+    "passwordNeedsLowercase": "Password must include at least one lowercase letter.",
+    "passwordNeedsNumber": "Password must include at least one number.",
+    "passwordTooCommon": "Please choose a stronger, less common password.",
+    "invalidFileType": "This file type is not permitted.",
+    "fileTooLarge": "The uploaded file exceeds the maximum allowed size."
+  },
+  "auth": {
+    "loginTitle": "Sign In",
+    "logout": "Sign Out",
+    "forgotPassword": "Forgot Password",
+    "forgotPasswordHint": "Enter your registered email address to receive single-use password reset instructions.",
+    "resetPassword": "Reset Password",
+    "sendResetLink": "Send Reset Instructions",
+    "backToLogin": "Back to Sign In",
+    "resetTokenNote": "Single-use, time-limited reset token must be verified on the server before updating password hash.",
+    "rememberMe": "Remember me",
+    "verifyEmail": "Verify Email Address",
+    "verifyTitle": "Email Verification",
+    "verifyPendingNotice": "Confirm the single-use verification token sent to your email address on the server.",
+    "resendVerification": "Resend Verification Email",
+    "registerTitle": "Create Account",
+    "registerDisabledNotice": "Public registration is disabled by default unless ALLOW_PUBLIC_REGISTRATION=true is enabled for this project.",
+    "genericResetSent": "If an account matching this email exists, reset instructions have been sent.",
+    "emailServiceUnavailable": "Email delivery is currently unconfigured or unavailable. Please contact an administrator."
+  },
+  "footer": {
+    "summary": "Dynamic footer populated from centralized Website Settings.",
+    "navigation": "Navigation",
+    "contactChannels": "Contact Channels",
+    "languagesSupported": "Languages: AR • EN • FR • RU • DE • ES"
+  },
+  "admin": {
+    "metaTitle": "Admin Dashboard Shell Blueprint",
+    "brand": "Admin Foundation",
+    "blueprintTitle": "Blueprint Shell Only — Backend Not Connected:",
+    "blueprintWarning": "Authentication, RBAC enforcement, database queries, and SMTP delivery must be implemented on the server before production use. No fabricated statistics are displayed.",
+    "backendRequired": "Server Endpoint Required",
+    "separateFromWebsiteSettings": "Separate From Website Settings",
+    "websiteSettingsDesc": "Centralized business settings (site name, logo, favicon, header/footer, navigation, WhatsApp, contact channels, languages). Separate from Account Settings.",
+    "accountSettingsDesc": "Personal profile, email, mobile number, avatar, password change (with current-password verification), and active session revocation for the logged-in administrator.",
+    "groupCore": "Dashboard",
+    "groupPublishing": "Content & Localization",
+    "groupConfiguration": "Website Configuration",
+    "groupSecurity": "Access & Security",
+    "groupPersonal": "Personal Account",
+    "nav": {
+      "overview": "Overview",
+      "websiteContent": "Website Content",
+      "pagesManagement": "Pages Management",
+      "mediaLibrary": "Media Library",
+      "translations": "Translations (6 Languages)",
+      "websiteSettings": "Website Settings",
+      "contactInfo": "Contact Information",
+      "seoSettings": "SEO Settings",
+      "userManagement": "User Management",
+      "rolesPermissions": "Roles & Permissions",
+      "accountSettings": "Account Settings"
+    },
+    "metrics": {
+      "pagesCount": "Published Pages",
+      "mediaCount": "Media Assets",
+      "usersCount": "Active Users",
+      "missingTranslations": "Unverified / Missing Translations",
+      "requiresDb": "Requires Database Query",
+      "trackPerLanguage": "Tracked Across 6 Languages"
+    },
+    "table": {
+      "settingGroup": "Group",
+      "managedFields": "Managed Fields",
+      "status": "Status"
+    },
+    "settingsGroups": {
+      "identity": "Brand & Identity",
+      "contact": "Contact Information",
+      "seo": "SEO & Indexing"
+    },
+    "status": {
+      "awaitingBackend": "Awaiting Backend Integration"
+    },
+    "account": {
+      "changePassword": "Change Password (Requires Current Password & Auth Backend)",
+      "revokeSessions": "Log Out Other Active Sessions",
+      "profileMobile": "Mobile Number",
+      "profileAvatar": "Profile Picture",
+      "preferredLang": "Preferred Language",
+      "activeSessions": "Active Sessions"
+    }
+  }
+}
+

@@ -1,0 +1,157 @@
+{
+  "_meta": {
+    "code": "fr",
+    "direction": "ltr",
+    "verified": false,
+    "status": "foundation_baseline_unverified",
+    "note": "À relire et adapter par projet avant de marquer comme vérifié."
+  },
+  "common": {
+    "skipToContent": "Aller au contenu",
+    "menu": "Menu",
+    "close": "Fermer",
+    "save": "Enregistrer les modifications",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "create": "Créer",
+    "search": "Rechercher",
+    "loading": "Chargement...",
+    "selectLanguage": "Choisir la langue",
+    "contactUs": "Contactez-nous"
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "modules": "Capacités",
+    "contact": "Contact"
+  },
+  "public": {
+    "metaTitle": "Modèle de structure publique",
+    "brandPlaceholder": "Nom de la marque (depuis les paramètres du site)",
+    "blueprintNotice": "Modèle de mise en page — À adapter selon le secteur et à connecter au backend",
+    "heroHeading": "Structure universelle de base web",
+    "heroSubtitle": "Remplacez cette structure neutre par le design, les pages et les paramètres centralisés adaptés au secteur du client.",
+    "openAdminShell": "Voir le modèle d'administration"
+  },
+  "contact": {
+    "centralizedHeading": "Liaisons de contact centralisées",
+    "centralizedDescription": "Les numéros de téléphone, WhatsApp, e-mail, adresse physique et horaires doivent provenir dynamiquement du tableau de bord -> Paramètres du site.",
+    "whatsapp": "WhatsApp",
+    "phone": "Téléphone",
+    "email": "E-mail",
+    "address": "Adresse",
+    "hours": "Horaires d'ouverture",
+    "formHeading": "Modèle de formulaire de demande",
+    "backendNotice": "Nécessite une validation serveur, une protection CSRF et une limitation de débit avant mise en production."
+  },
+  "form": {
+    "fullName": "Nom complet",
+    "email": "Adresse e-mail",
+    "phone": "Numéro de mobile",
+    "password": "Mot de passe",
+    "currentPassword": "Mot de passe actuel",
+    "newPassword": "Nouveau mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "message": "Message",
+    "submit": "Envoyer le message"
+  },
+  "validation": {
+    "required": "Ce champ est obligatoire.",
+    "invalidEmail": "Veuillez saisir une adresse e-mail valide.",
+    "invalidPhone": "Veuillez saisir un numéro de téléphone valide.",
+    "invalidUrl": "Veuillez saisir une URL HTTP ou HTTPS valide.",
+    "minLength": "La saisie doit contenir au moins {min} caractères.",
+    "maxLength": "La saisie ne doit pas dépasser {max} caractères.",
+    "passwordMismatch": "Les mots de passe ne correspondent pas.",
+    "passwordNeedsUppercase": "Le mot de passe doit contenir au moins une lettre majuscule.",
+    "passwordNeedsLowercase": "Le mot de passe doit contenir au moins une lettre minuscule.",
+    "passwordNeedsNumber": "Le mot de passe doit contenir au moins un chiffre.",
+    "passwordTooCommon": "Veuillez choisir un mot de passe plus robuste et moins courant.",
+    "invalidFileType": "Ce type de fichier n'est pas autorisé.",
+    "fileTooLarge": "Le fichier dépasse la taille maximale autorisée."
+  },
+  "auth": {
+    "loginTitle": "Connexion",
+    "logout": "Déconnexion",
+    "forgotPassword": "Mot de passe oublié",
+    "forgotPasswordHint": "Saisissez votre adresse e-mail enregistrée pour recevoir les instructions de réinitialisation à usage unique.",
+    "resetPassword": "Réinitialiser le mot de passe",
+    "sendResetLink": "Envoyer les instructions",
+    "backToLogin": "Retour à la connexion",
+    "resetTokenNote": "Le jeton à usage unique et à durée limitée doit être vérifié côté serveur avant la mise à jour du mot de passe.",
+    "rememberMe": "Se souvenir de moi",
+    "verifyEmail": "Vérifier l'adresse e-mail",
+    "verifyTitle": "Vérification de l'e-mail",
+    "verifyPendingNotice": "Validez le jeton à usage unique envoyé à votre adresse e-mail sur le serveur.",
+    "resendVerification": "Renvoyer l'e-mail de vérification",
+    "registerTitle": "Créer un compte",
+    "registerDisabledNotice": "L'inscription publique est désactivée par défaut sauf si ALLOW_PUBLIC_REGISTRATION=true est activé.",
+    "genericResetSent": "Si un compte correspond à cet e-mail, les instructions de réinitialisation ont été envoyées.",
+    "emailServiceUnavailable": "L'envoi d'e-mails est actuellement non configuré ou indisponible. Veuillez contacter un administrateur."
+  },
+  "footer": {
+    "summary": "Pied de page dynamique alimenté par les paramètres centralisés du site.",
+    "navigation": "Navigation",
+    "contactChannels": "Canaux de contact",
+    "languagesSupported": "Langues : AR • EN • FR • RU • DE • ES"
+  },
+  "admin": {
+    "metaTitle": "Modèle de tableau de bord d'administration",
+    "brand": "Base d'administration",
+    "blueprintTitle": "Modèle visuel uniquement — Backend non connecté :",
+    "blueprintWarning": "L'authentification, les autorisations RBAC, les requêtes base de données et l'envoi SMTP doivent être implémentés côté serveur. Aucune statistique fictive n'est affichée.",
+    "backendRequired": "Point d'API serveur requis",
+    "separateFromWebsiteSettings": "Séparé des paramètres du site",
+    "websiteSettingsDesc": "Paramètres généraux du site (nom, logo, favicon, en-tête/pied de page, menus, WhatsApp, coordonnées, langues). Séparés des paramètres du compte.",
+    "accountSettingsDesc": "Profil personnel, e-mail, mobile, photo de profil, changement de mot de passe (avec vérification du mot de passe actuel) et déconnexion des autres sessions.",
+    "groupCore": "Tableau de bord",
+    "groupPublishing": "Contenu et localisation",
+    "groupConfiguration": "Configuration du site",
+    "groupSecurity": "Accès et sécurité",
+    "groupPersonal": "Compte personnel",
+    "nav": {
+      "overview": "Vue d'ensemble",
+      "websiteContent": "Contenu du site",
+      "pagesManagement": "Gestion des pages",
+      "mediaLibrary": "Médiathèque",
+      "translations": "Traductions (6 langues)",
+      "websiteSettings": "Paramètres du site",
+      "contactInfo": "Coordonnées",
+      "seoSettings": "Paramètres SEO",
+      "userManagement": "Gestion des utilisateurs",
+      "rolesPermissions": "Rôles et permissions",
+      "accountSettings": "Paramètres du compte"
+    },
+    "metrics": {
+      "pagesCount": "Pages publiées",
+      "mediaCount": "Fichiers médias",
+      "usersCount": "Utilisateurs actifs",
+      "missingTranslations": "Traductions manquantes ou non vérifiées",
+      "requiresDb": "Requiert une requête base de données",
+      "trackPerLanguage": "Suivi sur 6 langues"
+    },
+    "table": {
+      "settingGroup": "Groupe",
+      "managedFields": "Champs gérés",
+      "status": "Statut"
+    },
+    "settingsGroups": {
+      "identity": "Marque et identité",
+      "contact": "Coordonnées",
+      "seo": "SEO et indexation"
+    },
+    "status": {
+      "awaitingBackend": "En attente d'intégration backend"
+    },
+    "account": {
+      "changePassword": "Changer le mot de passe (requiert mot de passe actuel et backend)",
+      "revokeSessions": "Déconnecter les autres sessions actives",
+      "profileMobile": "Numéro de mobile",
+      "profileAvatar": "Photo de profil",
+      "preferredLang": "Langue préférée",
+      "activeSessions": "Sessions actives"
+    }
+  }
+}
+

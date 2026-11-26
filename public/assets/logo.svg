@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 265 56" role="img" aria-label="شركة احتياجاتك للتنمية المستدامة">
+  <defs>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14532d"/>
+      <stop offset="100%" stop-color="#0b3b1f"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4a038"/>
+      <stop offset="100%" stop-color="#b47e18"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="4" width="48" height="48" rx="12" fill="url(#emeraldGrad)"/>
+  <!-- Greenhouse arch -->
+  <path d="M12 40V25C12 17.5 18 12 26 12C34 12 40 17.5 40 25V40" fill="none" stroke="#ecfdf5" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M9 40H43" stroke="url(#goldGrad)" stroke-width="2.4" stroke-linecap="round"/>
+  <!-- Sprouting leaf inside greenhouse -->
+  <path d="M26 38V23" stroke="#86efac" stroke-width="2" stroke-linecap="round"/>
+  <path d="M26 28C26 23 31 20 35 20C35 24.5 31 28 26 28Z" fill="url(#goldGrad)"/>
+  <path d="M26 32C26 27 21 24 17 24C17 28.5 21 32 26 32Z" fill="#86efac"/>
+  <!-- Brand typography mark -->
+  <text x="62" y="27" font-family="Cairo, Tahoma, sans-serif" font-size="16" font-weight="700" fill="#0f2419">احتياجاتك</text>
+  <text x="62" y="44" font-family="Plus Jakarta Sans, Inter, sans-serif" font-size="10.5" font-weight="600" fill="#4b6355" letter-spacing="0.4">EHTYAJATAK SUSTAINABLE DEV</text>
+</svg>

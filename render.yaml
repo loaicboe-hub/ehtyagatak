@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: ehtyajatak-platform
+    runtime: node
+    plan: free
+    buildCommand: "node -v"
+    startCommand: "npm start"
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: APP_ENV
+        value: "production"
+      - key: DEFAULT_LANGUAGE
+        value: "ar"
+      - key: SUPPORTED_LANGUAGES
+        value: "ar,en"
+      - key: DB_DRIVER
+        value: "sqlite"
+      - key: SQLITE_PATH
+        value: "./storage/ehtyajatak.sqlite"
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: TRUST_PROXY
+        value: "true"
+      - key: ALLOW_PUBLIC_REGISTRATION
+        value: "false"
+      - key: SMTP_ENABLED
+        value: "false"
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: CSRF_SECRET
+        generateValue: true
+      - key: ERP_API_KEY
+        generateValue: true
