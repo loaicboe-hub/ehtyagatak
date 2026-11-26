@@ -2,6 +2,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import os from 'node:os';
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export const ROOT_DIR = path.resolve(__dirname, '../..');
 
@@ -33,7 +35,7 @@ export function getEnvConfig() {
     appName: process.env.APP_NAME || 'Ehtyajatak for Sustainable Development',
     appEnv: process.env.APP_ENV || 'development',
     appDebug: process.env.APP_DEBUG === 'true',
-    appUrl: process.env.APP_URL || process.env.RENDER_EXTERNAL_URL || 'http://localhost:3000',
+    appUrl: process.env.APP_URL || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : process.env.RENDER_EXTERNAL_URL || 'http://localhost:3000')),
     port: Number.parseInt(process.env.PORT || '3000', 10),
     host: process.env.HOST || (process.env.PORT ? '0.0.0.0' : '127.0.0.1'),
     defaultLanguage: process.env.DEFAULT_LANGUAGE || 'ar',
@@ -42,19 +44,23 @@ export function getEnvConfig() {
       .map((s) => s.trim().toLowerCase())
       .filter((s) => s === 'ar' || s === 'en'),
     dbDriver: process.env.DB_DRIVER || 'sqlite',
-    sqlitePath: path.resolve(ROOT_DIR, process.env.SQLITE_PATH || './storage/ehtyajatak.sqlite'),
-    sessionSecret: process.env.SESSION_SECRET || '',
-    csrfSecret: process.env.CSRF_SECRET || '',
+    sqlitePath: (process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME)
+      ? path.join(os.tmpdir(), 'ehtyajatak.sqlite')
+      : path.resolve(ROOT_DIR, process.env.SQLITE_PATH || './storage/ehtyajatak.sqlite'),
+    sessionSecret: process.env.SESSION_SECRET || 'ehtyajatak-secure-session-key-2026',
+    csrfSecret: process.env.CSRF_SECRET || 'ehtyajatak-csrf-secret-key-2026',
     authCookieName: process.env.AUTH_COOKIE_NAME || 'ehtyajatak_session',
     sessionTtlSeconds: Number.parseInt(process.env.SESSION_TTL_SECONDS || '86400', 10),
     rememberMeTtlSeconds: Number.parseInt(process.env.REMEMBER_ME_TTL_SECONDS || '2592000', 10),
-    cookieSecure: process.env.COOKIE_SECURE === 'true',
+    cookieSecure: process.env.COOKIE_SECURE === 'true' || Boolean(process.env.VERCEL),
     cookieSameSite: process.env.COOKIE_SAME_SITE || 'lax',
     passwordMinLength: Number.parseInt(process.env.PASSWORD_MIN_LENGTH || '10', 10),
     passwordResetTtlMinutes: Number.parseInt(process.env.PASSWORD_RESET_TTL_MINUTES || '30', 10),
     allowPublicRegistration: process.env.ALLOW_PUBLIC_REGISTRATION === 'true',
     requireEmailVerification: process.env.REQUIRE_EMAIL_VERIFICATION === 'true',
-    uploadDir: path.resolve(ROOT_DIR, process.env.UPLOAD_DIR || './storage/uploads'),
+    uploadDir: (process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME)
+      ? path.join(os.tmpdir(), 'uploads')
+      : path.resolve(ROOT_DIR, process.env.UPLOAD_DIR || './storage/uploads'),
     maxJsonBodyBytes: Number.parseInt(process.env.MAX_JSON_BODY_BYTES || '1048576', 10),
     maxFormBodyBytes: Number.parseInt(process.env.MAX_FORM_BODY_BYTES || '2097152', 10),
     maxMultipartBytes: Number.parseInt(process.env.MAX_MULTIPART_REQUEST_BYTES || '12582912', 10),

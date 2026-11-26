@@ -57,64 +57,77 @@ function tryServeStaticAsset(res, pathname) {
   return true;
 }
 
+export async function handleAppRequest(req, res, { db = getDb() } = {}) {
+  try {
+    const cfg = getEnvConfig();
+    const baseOrigin = cfg.appUrl || 'http://localhost:3000';
+
+    // In Vercel serverless rewrites, req.headers['x-matched-path'] holds the original path
+    let reqUrlStr = req.url || '/';
+    if (req.headers && req.headers['x-matched-path'] && (reqUrlStr.startsWith('/api') || reqUrlStr === '/')) {
+      const matched = req.headers['x-matched-path'];
+      const qIdx = reqUrlStr.indexOf('?');
+      reqUrlStr = qIdx !== -1 && !matched.includes('?') ? `${matched}${reqUrlStr.slice(qIdx)}` : matched;
+    }
+
+    const url = new URL(reqUrlStr, baseOrigin);
+    const pathname = url.pathname === '/' ? '/' : url.pathname.replace(/\/+$/, '');
+
+    // CORS strict allowlist check (no wildcard with credentials)
+    const origin = req.headers.origin;
+    if (origin && cfg.corsAllowedOrigins.includes(origin)) {
+      res.setHeader('Access-Control-Allow-Origin', origin);
+      res.setHeader('Access-Control-Allow-Credentials', 'true');
+      res.setHeader('Access-Control-Allow-Headers', 'Content-Type, X-CSRF-Token, X-ERP-API-KEY');
+      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    }
+    if (req.method === 'OPTIONS') {
+      res.writeHead(204, getSecurityHeaders());
+      res.end();
+      return;
+    }
+
+    if (req.method === 'GET' && tryServeStaticAsset(res, pathname)) {
+      return;
+    }
+
+    if (req.method === 'POST' || req.method === 'PUT' || req.method === 'PATCH') {
+      req._parsedBody = await parseRequestBody(req);
+    }
+
+    const cookies = parseCookies(req);
+    const pathLangMatch = pathname.match(/^\/(ar|en)(?=\/|$)/);
+    const queryLang = url.searchParams.get('lang');
+    const user = resolveSessionUser(db, req);
+    const lang = resolveProjectLanguage(
+      pathLangMatch ? pathLangMatch[1] : (queryLang || cookies.site_lang || user?.preferredLanguage || cfg.defaultLanguage)
+    );
+
+    if (await handleErpApiRequest({ req, res, pathname, db })) return;
+    if (await handleAuthRequest({ req, res, url, pathname, lang, db, user })) return;
+    if (await handlePortalRequest({ req, res, url, pathname, lang, db, user })) return;
+    if (await handleAdminRequest({ req, res, url, pathname, lang, db, user })) return;
+    if (await handlePublicRequest({ req, res, url, pathname, lang, db, user })) return;
+
+    if (pathname.startsWith('/api/')) {
+      return sendJson(res, 404, { error: 'Endpoint not found.' });
+    }
+    return sendHtml(res, 404, `<!DOCTYPE html><html lang="${lang}" dir="${lang === 'ar' ? 'rtl' : 'ltr'}"><head><meta charset="UTF-8"><title>404</title><link rel="stylesheet" href="/foundation/design-system/tokens.css"><link rel="stylesheet" href="/foundation/design-system/base.css"><link rel="stylesheet" href="/foundation/design-system/components.css"><link rel="stylesheet" href="/css/theme.css"></head><body><main class="auth-page"><div class="card stack"><h1>404</h1><p>${lang === 'ar' ? 'الصفحة غير موجودة.' : 'Page not found.'}</p><a class="btn btn--primary" href="/${lang}">${lang === 'ar' ? 'العودة للرئيسية' : 'Back to Home'}</a></div></main></body></html>`);
+  } catch (err) {
+    const status = err.statusCode || 500;
+    const msg = status < 500 ? err.message : 'Internal server error.';
+    if (req.url?.startsWith('/api/')) {
+      return sendJson(res, status, { error: msg });
+    }
+    return sendHtml(res, status, `<h1>Error ${status}</h1><p>${msg}</p>`);
+  }
+}
+
 export function createAppServer({ db = getDb() } = {}) {
   seedDatabase(db);
 
   return http.createServer(async (req, res) => {
-    try {
-      const cfg = getEnvConfig();
-      const baseOrigin = cfg.appUrl || 'http://localhost:3000';
-      const url = new URL(req.url || '/', baseOrigin);
-      const pathname = url.pathname === '/' ? '/' : url.pathname.replace(/\/+$/, '');
-
-      // CORS strict allowlist check (no wildcard with credentials)
-      const origin = req.headers.origin;
-      if (origin && cfg.corsAllowedOrigins.includes(origin)) {
-        res.setHeader('Access-Control-Allow-Origin', origin);
-        res.setHeader('Access-Control-Allow-Credentials', 'true');
-        res.setHeader('Access-Control-Allow-Headers', 'Content-Type, X-CSRF-Token, X-ERP-API-KEY');
-        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-      }
-      if (req.method === 'OPTIONS') {
-        res.writeHead(204, getSecurityHeaders());
-        res.end();
-        return;
-      }
-
-      if (req.method === 'GET' && tryServeStaticAsset(res, pathname)) {
-        return;
-      }
-
-      if (req.method === 'POST' || req.method === 'PUT' || req.method === 'PATCH') {
-        req._parsedBody = await parseRequestBody(req);
-      }
-
-      const cookies = parseCookies(req);
-      const pathLangMatch = pathname.match(/^\/(ar|en)(?=\/|$)/);
-      const queryLang = url.searchParams.get('lang');
-      const user = resolveSessionUser(db, req);
-      const lang = resolveProjectLanguage(
-        pathLangMatch ? pathLangMatch[1] : (queryLang || cookies.site_lang || user?.preferredLanguage || cfg.defaultLanguage)
-      );
-
-      if (await handleErpApiRequest({ req, res, pathname, db })) return;
-      if (await handleAuthRequest({ req, res, url, pathname, lang, db, user })) return;
-      if (await handlePortalRequest({ req, res, url, pathname, lang, db, user })) return;
-      if (await handleAdminRequest({ req, res, url, pathname, lang, db, user })) return;
-      if (await handlePublicRequest({ req, res, url, pathname, lang, db, user })) return;
-
-      if (pathname.startsWith('/api/')) {
-        return sendJson(res, 404, { error: 'Endpoint not found.' });
-      }
-      return sendHtml(res, 404, `<!DOCTYPE html><html lang="${lang}" dir="${lang === 'ar' ? 'rtl' : 'ltr'}"><head><meta charset="UTF-8"><title>404</title><link rel="stylesheet" href="/foundation/design-system/tokens.css"><link rel="stylesheet" href="/foundation/design-system/base.css"><link rel="stylesheet" href="/foundation/design-system/components.css"><link rel="stylesheet" href="/css/theme.css"></head><body><main class="auth-page"><div class="card stack"><h1>404</h1><p>${lang === 'ar' ? 'الصفحة غير موجودة.' : 'Page not found.'}</p><a class="btn btn--primary" href="/${lang}">${lang === 'ar' ? 'العودة للرئيسية' : 'Back to Home'}</a></div></main></body></html>`);
-    } catch (err) {
-      const status = err.statusCode || 500;
-      const msg = status < 500 ? err.message : 'Internal server error.';
-      if (req.url?.startsWith('/api/')) {
-        return sendJson(res, status, { error: msg });
-      }
-      return sendHtml(res, status, `<h1>Error ${status}</h1><p>${msg}</p>`);
-    }
+    await handleAppRequest(req, res, { db });
   });
 }
 

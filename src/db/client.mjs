@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import os from 'node:os';
 import { DatabaseSync } from 'node:sqlite';
 import { getEnvConfig, ROOT_DIR } from '../config/env.mjs';
 
@@ -13,10 +14,26 @@ export function getDb(customPath = null) {
       'DB_DRIVER=postgresql is targeted for VPS deployment (run foundation/database/postgresql/001_core_schema.sql + 002_ehtyajatak_modules.sql and configure pg driver). For local development without PostgreSQL, set DB_DRIVER=sqlite.'
     );
   }
-  const dbPath = customPath || cfg.sqlitePath;
-  fs.mkdirSync(path.dirname(dbPath), { recursive: true });
-  const db = new DatabaseSync(dbPath);
-  db.exec('PRAGMA journal_mode = WAL;');
+  let dbPath = customPath || cfg.sqlitePath;
+  if (!customPath && (process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME)) {
+    dbPath = path.join(os.tmpdir(), 'ehtyajatak.sqlite');
+  }
+
+  try {
+    fs.mkdirSync(path.dirname(dbPath), { recursive: true });
+  } catch {
+    // ignore directory creation error
+  }
+
+  let db;
+  try {
+    db = new DatabaseSync(dbPath);
+    db.exec('PRAGMA journal_mode = WAL;');
+  } catch (err) {
+    console.warn(`Could not open SQLite at ${dbPath} (${err.message}). Falling back to in-memory database.`);
+    db = new DatabaseSync(':memory:');
+  }
+
   db.exec('PRAGMA foreign_keys = ON;');
   db.exec('PRAGMA busy_timeout = 5000;');
   if (!customPath) _db = db;

@@ -23,6 +23,25 @@ export async function readRawBody(req, maxBytes) {
 }
 
 export async function parseRequestBody(req) {
+  if (req.body) {
+    if (typeof req.body === 'object') {
+      return { fields: req.body, files: {}, isJson: true };
+    }
+    if (typeof req.body === 'string') {
+      try {
+        const parsed = JSON.parse(req.body);
+        return { fields: parsed && typeof parsed === 'object' ? parsed : {}, files: {}, isJson: true };
+      } catch {
+        const params = new URLSearchParams(req.body);
+        const fields = {};
+        for (const [k, v] of params.entries()) {
+          fields[k] = v;
+        }
+        return { fields, files: {}, isJson: false };
+      }
+    }
+  }
+
   const cfg = getEnvConfig();
   const contentType = String(req.headers['content-type'] || '').toLowerCase();
 
