@@ -133,7 +133,7 @@ export function createAppServer({ db = getDb() } = {}) {
 
 // Start server when executed directly
 const isMain = process.argv[1] && path.resolve(process.argv[1]) === path.resolve(fileURLToPath(import.meta.url));
-if (isMain) {
+if (isMain && !process.env.VERCEL && !process.env.AWS_LAMBDA_FUNCTION_NAME) {
   const cfg = getEnvConfig();
   const server = createAppServer();
   server.listen(cfg.port, cfg.host, () => {
