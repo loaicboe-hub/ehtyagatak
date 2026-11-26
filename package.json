@@ -8,6 +8,7 @@
     "node": "22.x"
   },
   "scripts": {
+    "build": "node scripts/generate-static.mjs",
     "start": "node src/server.mjs",
     "db:init": "node src/db/init.mjs",
     "db:create-admin": "node src/db/create-admin.mjs",

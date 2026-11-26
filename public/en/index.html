@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Ehtyajatak for Sustainable Development</title>
+  <meta name="description" content="Sustainable agricultural investment in modern greenhouses">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="canonical" href="http://localhost:3000/en">
+  <link rel="alternate" hreflang="ar" href="http://localhost:3000/ar">
+  <link rel="alternate" hreflang="en" href="http://localhost:3000/en">
+  <link rel="alternate" hreflang="x-default" href="http://localhost:3000/ar">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ehtyajatak for Sustainable Development">
+  <meta property="og:title" content="Home | Ehtyajatak for Sustainable Development">
+  <meta property="og:description" content="Sustainable agricultural investment in modern greenhouses">
+  <meta property="og:url" content="http://localhost:3000/en">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/foundation/design-system/tokens.css">
+  <link rel="stylesheet" href="/foundation/design-system/base.css">
+  <link rel="stylesheet" href="/foundation/design-system/components.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <script src="/js/splash-init.js"></script>
+</head>
+<body>
+  
+  <div id="ehtyajatak-splash" class="splash-overlay" role="dialog" aria-modal="true" aria-label="شركة احتياجاتك للتنمية المستدامة" dir="rtl" data-splash>
+    <button type="button" class="splash-skip" data-splash-skip aria-label="Skip">
+      <span>تخطي</span>
+      <span aria-hidden="true">/</span>
+      <span>Skip</span>
+    </button>
+
+    <div class="splash-stage">
+      <div class="splash-emblem" aria-hidden="true">
+        <svg class="splash-svg" viewBox="0 0 220 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="splashGoldGlow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="2.5" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+            <linearGradient id="splashLeafGrad" x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0%" stop-color="#2E8B57"/>
+              <stop offset="100%" stop-color="#3CB371"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Stage 2a: Outer Golden Greenhouse Arch -->
+          <path
+            class="splash-arch splash-arch--gold"
+            d="M36 154 V84 C36 44 68 18 110 18 C152 18 184 44 184 84 V154 H36"
+            stroke="#D4AF37"
+            stroke-width="6.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+
+          <!-- Stage 2b: Inner Emerald Greenhouse Arch -->
+          <path
+            class="splash-arch splash-arch--emerald"
+            d="M54 150 V88 C54 55 78 34 110 34 C142 34 166 55 166 88 V150"
+            stroke="#3CB371"
+            stroke-width="5.5"
+            stroke-linecap="round"
+          />
+
+          <!-- Stage 2c: Sprouting Emerald Leaves -->
+          <g class="splash-leaves">
+            <!-- Stem & Right Leaf -->
+            <path
+              d="M110 132 C110 105 113 84 128 68 C142 54 162 50 172 52 C171 67 164 86 149 97 C137 106 121 107 112 103"
+              fill="url(#splashLeafGrad)"
+              stroke="#86EFAC"
+              stroke-width="2"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M114 112 C125 94 142 78 160 64"
+              stroke="#D4AF37"
+              stroke-width="2"
+              stroke-linecap="round"
+              opacity="0.85"
+            />
+            <!-- Left Leaf -->
+            <path
+              d="M107 132 C107 108 100 91 86 81 C74 73 60 72 52 75 C54 88 60 102 72 110 C82 116 95 117 104 113"
+              fill="url(#splashLeafGrad)"
+              stroke="#86EFAC"
+              stroke-width="2"
+              stroke-linejoin="round"
+            />
+          </g>
+
+          <!-- Stage 1: Ascending Golden Zigzag Growth Line & Arrowhead -->
+          <path
+            class="splash-growth-line"
+            d="M36 154 L76 122 L106 142 L138 114 L154 126 L184 96"
+            stroke="#D4AF37"
+            stroke-width="7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            filter="url(#splashGoldGlow)"
+          />
+          <path
+            class="splash-growth-head"
+            d="M167 95 L186 94 L185 113"
+            stroke="#D4AF37"
+            stroke-width="6.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            filter="url(#splashGoldGlow)"
+          />
+        </svg>
+      </div>
+
+      <!-- Stage 3: Brand Typography -->
+      <div class="splash-brand">
+        <div class="splash-title">شركة احتياجاتك</div>
+        <div class="splash-subtitle">للتنمية المستدامة</div>
+      </div>
+
+      <!-- Stage 4: Subtle Golden Pulse & Tagline -->
+      <div class="splash-footer">
+        <span class="splash-pulse" aria-hidden="true"></span>
+        <span class="splash-tagline">الاستثمار الزراعي المستدام</span>
+      </div>
+    </div>
+  </div>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-brand" href="/en">
+        <img class="site-brand__logo" src="/assets/logo.png" alt="Ehtyajatak for Sustainable Development">
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a class="site-nav__link" href="/en" aria-current="page">Home</a><a class="site-nav__link" href="/en/about">About Us</a><a class="site-nav__link" href="/en/projects">Projects</a><a class="site-nav__link" href="/en/invest">Invest</a><a class="site-nav__link" href="/en/how-it-works">How It Works</a><a class="site-nav__link" href="/en/services">Services</a><a class="site-nav__link" href="/en/news">News</a><a class="site-nav__link" href="/en/faq">FAQ</a><a class="site-nav__link" href="/en/contact">Contact</a>
+      </nav>
+
+      <div class="site-header__actions">
+        <a class="btn btn--secondary btn--sm" href="/ar" hreflang="ar">العربية</a>
+        <a class="btn btn--primary btn--sm header-account-btn" href="/login">Investor &amp; Staff Login</a>
+        <button type="button" class="btn btn--secondary btn--sm mobile-menu-toggle" data-mobile-menu-open aria-expanded="false" aria-controls="mobile-nav-drawer">
+          Menu
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="drawer-backdrop" data-drawer-backdrop hidden></div>
+  <aside id="mobile-nav-drawer" class="mobile-drawer" aria-label="Mobile Navigation" data-open="false" hidden>
+    <div class="cluster" style="justify-content: space-between;">
+      <strong>Menu</strong>
+      <button type="button" class="btn btn--ghost btn--sm" data-mobile-menu-close>Close</button>
+    </div>
+    <nav class="stack" aria-label="Mobile Primary">
+      <a class="site-nav__link" href="/en" aria-current="page">Home</a><a class="site-nav__link" href="/en/about">About Us</a><a class="site-nav__link" href="/en/projects">Projects</a><a class="site-nav__link" href="/en/invest">Invest</a><a class="site-nav__link" href="/en/how-it-works">How It Works</a><a class="site-nav__link" href="/en/services">Services</a><a class="site-nav__link" href="/en/news">News</a><a class="site-nav__link" href="/en/faq">FAQ</a><a class="site-nav__link" href="/en/contact">Contact</a>
+      <a class="site-nav__link" href="/en/policies">Policies</a>
+    </nav>
+    <div class="stack" style="margin-block-start: auto;">
+      <a class="btn btn--secondary" href="/ar">العربية</a>
+      <a class="btn btn--primary btn--sm" href="/login">Investor &amp; Staff Login</a>
+    </div>
+  </aside>
+
+  <main id="main-content" data-csrf-token="1795705099.8VszXfTRq8Olw8kxDqsmag.P88fD6Cg87c1CIGLGs1OoBLytPQzajZMP6EYG9F6bo8">
+    
+    
+  <section
+    class="hero-carousel"
+    role="region"
+    aria-roledescription="carousel"
+    aria-label="Greenhouse Investment Showcase"
+    data-hero-carousel
+    data-interval="5000"
+  >
+    <div class="hero-carousel__stage">
+      
+      <div class="hero-slide is-active" data-carousel-slide="0" aria-hidden="false">
+        <img
+          class="hero-slide__img"
+          src="/assets/hero/slide-1.jpg"
+          alt="Modern glass greenhouses stretching across lush emerald sustainable farming fields at sunrise"
+          loading="eager"
+          decoding="async" fetchpriority="high"
+        >
+        <div class="hero-slide__scrim" aria-hidden="true"></div>
+        <div class="container hero-slide__inner">
+          <div class="hero-slide__content stack">
+            <span class="hero-badge">Sustainable Agribusiness Investment</span>
+            <h1 class="hero-slide__title">Invest in Modern Agricultural Greenhouses with Turnkey Management</h1>
+            <p class="hero-banner__sub">Ehtyajatak empowers you to own and operate productive 360 m² greenhouses backed by documented contracts and integrated farm operations.</p>
+            <div class="cluster">
+              <a class="btn btn--accent" href="/en/invest">Calculate Your Investment</a>
+              <a class="btn btn--hero-outline" href="/en/projects">Explore Projects</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-slide" data-carousel-slide="1" aria-hidden="true">
+        <img
+          class="hero-slide__img"
+          src="/assets/hero/slide-2.jpg"
+          alt="Interior of a high-tech commercial greenhouse with precision irrigation and climate control"
+          loading="lazy"
+          decoding="async"
+        >
+        <div class="hero-slide__scrim" aria-hidden="true"></div>
+        <div class="container hero-slide__inner">
+          <div class="hero-slide__content stack">
+            <span class="hero-badge">Advanced Protected-Farming Tech</span>
+            <h2 class="hero-slide__title">Modern Greenhouse Infrastructure Built for High Efficiency</h2>
+            <p class="hero-banner__sub">Precision drip fertigation, automated climate ventilation, and expert agronomy backed by our private Investor Portal.</p>
+            <div class="cluster">
+              <a class="btn btn--accent" href="/en/services">Explore Services</a>
+              <a class="btn btn--hero-outline" href="/en/how-it-works">How It Works</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-slide" data-carousel-slide="2" aria-hidden="true">
+        <img
+          class="hero-slide__img"
+          src="/assets/hero/slide-3.jpg"
+          alt="Close-up of fresh heirloom tomatoes and bell peppers with precision drip irrigation emitters"
+          loading="lazy"
+          decoding="async"
+        >
+        <div class="hero-slide__scrim" aria-hidden="true"></div>
+        <div class="container hero-slide__inner">
+          <div class="hero-slide__content stack">
+            <span class="hero-badge">High-Yield Fresh Produce</span>
+            <h2 class="hero-slide__title">Export-Grade Harvests Across Multi-Cycle Greenhouse Seasons</h2>
+            <p class="hero-banner__sub">Cultivating high-demand bell peppers, cherry tomatoes, and cucumbers with transparent verified yield and profit reporting.</p>
+            <div class="cluster">
+              <a class="btn btn--accent" href="/en/projects">View Active Projects</a>
+              <a class="btn btn--hero-outline" href="/login">Investor Portal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-slide" data-carousel-slide="3" aria-hidden="true">
+        <img
+          class="hero-slide__img"
+          src="/assets/hero/slide-4.jpg"
+          alt="Panoramic aerial landscape of emerald cultivated fields, greenhouses, and solar farm infrastructure"
+          loading="lazy"
+          decoding="async"
+        >
+        <div class="hero-slide__scrim" aria-hidden="true"></div>
+        <div class="container hero-slide__inner">
+          <div class="hero-slide__content stack">
+            <span class="hero-badge">A Sustainable Agricultural Future</span>
+            <h2 class="hero-slide__title">Sustainable Growth &amp; Digital Governance Protecting Your Assets</h2>
+            <p class="hero-banner__sub">Solar-assisted farming, water-efficient infrastructure, and mandatory administrative approval before financial updates release.</p>
+            <div class="cluster">
+              <a class="btn btn--accent" href="/en/contact">Book a Consultation</a>
+              <a class="btn btn--hero-outline" href="/en/policies">Policies &amp; Governance</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="hero-carousel__arrow hero-carousel__arrow--prev"
+        data-carousel-prev
+        aria-label="Previous slide"
+      >
+        <span aria-hidden="true">&#10094;</span>
+      </button>
+      <button
+        type="button"
+        class="hero-carousel__arrow hero-carousel__arrow--next"
+        data-carousel-next
+        aria-label="Next slide"
+      >
+        <span aria-hidden="true">&#10095;</span>
+      </button>
+
+      <div class="hero-carousel__dots" role="tablist" aria-label="Slide pagination">
+        
+      <button
+        type="button"
+        class="hero-carousel__dot is-active"
+        data-carousel-dot="0"
+        aria-label="Go to slide 1"
+        aria-current="true"
+      ></button>
+      <button
+        type="button"
+        class="hero-carousel__dot"
+        data-carousel-dot="1"
+        aria-label="Go to slide 2"
+        aria-current="false"
+      ></button>
+      <button
+        type="button"
+        class="hero-carousel__dot"
+        data-carousel-dot="2"
+        aria-label="Go to slide 3"
+        aria-current="false"
+      ></button>
+      <button
+        type="button"
+        class="hero-carousel__dot"
+        data-carousel-dot="3"
+        aria-label="Go to slide 4"
+        aria-current="false"
+      ></button>
+      </div>
+    </div>
+
+    <div class="hero-kpi-bar">
+      <div class="container hero-kpi-bar__grid">
+        <div class="hero-stat-card">
+          <div class="hero-stat-card__value">360 m²</div>
+          <div>Area per Greenhouse</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="hero-stat-card__value">220,000 EGP</div>
+          <div>Price per Greenhouse</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="hero-stat-card__value">3 Greenhouses</div>
+          <div>Minimum Investment</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="hero-stat-card__value">35%</div>
+          <div>Reference Down Payment</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      
+  <div class="calc-box" data-calculator data-area-sqm="360" data-price-egp="220000" data-min-units="3" data-down-percent="35">
+    <div class="stack">
+      <div>
+        <h2 style="margin-block-end: var(--space-1);">Greenhouse Investment Calculator</h2>
+        <p class="card__subtitle">Estimate required capital and down payment based on live admin-configured defaults.</p>
+      </div>
+      <div class="grid grid--cols-3" style="align-items: end;">
+        <div class="form-field">
+          <label class="form-label" for="calc-units-input">Number of Greenhouses</label>
+          <input class="form-control" id="calc-units-input" type="number" min="3" max="200" value="3" data-calc-count>
+          <span class="form-hint">Minimum investment: 3 greenhouses</span>
+        </div>
+        <div class="calc-stat">
+          <div class="calc-stat__label">Area per Greenhouse</div>
+          <div class="calc-stat__value">360 m²</div>
+        </div>
+        <div class="calc-stat">
+          <div class="calc-stat__label">Price per Greenhouse</div>
+          <div class="calc-stat__value">220,000 EGP</div>
+        </div>
+      </div>
+
+      <div class="calc-result-grid">
+        <div class="calc-stat">
+          <div class="calc-stat__label">Total Cultivated Area</div>
+          <div class="calc-stat__value" data-calc-area>—</div>
+        </div>
+        <div class="calc-stat">
+          <div class="calc-stat__label">Total Investment Value</div>
+          <div class="calc-stat__value" data-calc-total>—</div>
+        </div>
+        <div class="calc-stat calc-stat--highlight">
+          <div class="calc-stat__label">Down Payment (35%)</div>
+          <div class="calc-stat__value" data-calc-down>—</div>
+        </div>
+        <div class="calc-stat">
+          <div class="calc-stat__label">Remaining Balance (Installments)</div>
+          <div class="calc-stat__value" data-calc-remaining>—</div>
+        </div>
+      </div>
+
+      <p class="form-hint" style="margin: 0;">Displayed figures are indicative estimates based on standard greenhouse specifications (360 m²) and are subject to final contract terms and agricultural seasons.</p>
+      <div class="cluster"><a class="btn btn--primary" href="/en/invest">Request This Investment Plan</a></div>
+    </div>
+  </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-surface-alt);">
+    <div class="container stack">
+      <div>
+        <h2>Why Invest with Ehtyajatak?</h2>
+        <p class="card__subtitle">An integrated agronomy and asset-management platform built on field excellence and financial transparency.</p>
+      </div>
+      <div class="grid grid--cols-3">
+        
+          <article class="card kpi-card stack">
+            <h3 class="card__title">Documented Ownership &amp; Contracts</h3>
+            <p style="margin: 0; color: var(--color-text-secondary);">Formal contracts specifying greenhouse numbers, exact areas, site locations, and payment schedules.</p>
+          </article>
+        
+          <article class="card kpi-card stack">
+            <h3 class="card__title">Professional Agronomy Management</h3>
+            <p style="margin: 0; color: var(--color-text-secondary);">Dedicated agricultural engineers managing planting, drip irrigation, crop protection, and wholesale off-take.</p>
+          </article>
+        
+          <article class="card kpi-card stack">
+            <h3 class="card__title">Isolated Investor Portal</h3>
+            <p style="margin: 0; color: var(--color-text-secondary);">Dedicated private dashboard to track approved greenhouse status, crop yields, installments, and profit distributions.</p>
+          </article>
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container stack">
+      <div class="cluster" style="justify-content: space-between;">
+        <h2>Projects</h2>
+        <a class="btn btn--secondary btn--sm" href="/en/projects">Learn More</a>
+      </div>
+      <div class="grid grid--cols-2">
+        
+          <article class="card stack">
+            <div class="cluster" style="justify-content: space-between;">
+              <span class="badge badge--success">Active</span>
+              <span class="badge">18 / 60 Greenhouses</span>
+            </div>
+            <h3 class="card__title">Al-Waha Greenhouse Complex — Phase I</h3>
+            <p class="card__subtitle">Cairo–Ismailia Desert Road — Al-Waha Sector</p>
+            <p style="margin: 0;">Integrated 60-greenhouse agricultural complex equipped with automated drip irrigation and climate management for high-value crops.</p>
+            <div class="cluster">
+              <a class="btn btn--primary btn--sm" href="/en/projects/oasis-greenhouses-phase-1">Learn More</a>
+            </div>
+          </article>
+        
+          <article class="card stack">
+            <div class="cluster" style="justify-content: space-between;">
+              <span class="badge badge--success">Active</span>
+              <span class="badge">34 / 80 Greenhouses</span>
+            </div>
+            <h3 class="card__title">Sustainable Agri-Park — West Minya Extension</h3>
+            <p class="card__subtitle">West Minya Extension — Sustainable Agri-Park</p>
+            <p style="margin: 0;">Modern 80-unit expansion powered by solar pumping and precision water-saving fertigation systems.</p>
+            <div class="cluster">
+              <a class="btn btn--primary btn--sm" href="/en/projects/delta-south-sustainable-park">Learn More</a>
+            </div>
+          </article>
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-surface-alt);">
+    <div class="container grid grid--cols-2">
+      <div class="stack">
+        <h2>News</h2>
+        
+          <article class="card stack">
+            <h3 class="card__title">Autumn Harvest Milestone Completed at Al-Waha Sector</h3>
+            <p style="margin: 0; color: var(--color-text-secondary);">Our agronomy team completed harvest grading for bell peppers and cucumbers with production reports submitted for verification.</p>
+            <a href="/en/news/spring-harvest-milestone-2026">Learn More</a>
+          </article>
+        
+      </div>
+      <div class="stack">
+        <h2>FAQ</h2>
+        
+          <details class="card">
+            <summary style="font-weight: 700; cursor: pointer;">What is the minimum investment requirement?</summary>
+            <p style="margin-block: var(--space-3) 0; color: var(--color-text-secondary);">The current standard minimum is 3 greenhouses (360 m² each) with a 35% down payment, governed by admin-configured reference terms.</p>
+          </details>
+        
+          <details class="card">
+            <summary style="font-weight: 700; cursor: pointer;">How do I track greenhouse crops, installments, and profits?</summary>
+            <p style="margin-block: var(--space-3) 0; color: var(--color-text-secondary);">Once contracted and provisioned by our team, you receive private access to the Investor Portal showing your approved greenhouses, crop cycles, installments, profits, and downloadable statements.</p>
+          </details>
+        
+          <details class="card">
+            <summary style="font-weight: 700; cursor: pointer;">Why do operational and financial updates undergo administrative approval?</summary>
+            <p style="margin-block: var(--space-3) 0; color: var(--color-text-secondary);">Mandatory verification ensures complete accuracy before ERP-synced or field-recorded installments, crop updates, and profit distributions become visible to investors.</p>
+          </details>
+        
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="grid grid--cols-3">
+        <div class="stack">
+          <strong>Ehtyajatak for Sustainable Development</strong>
+          <p style="color: #cbd5e1; margin: 0;">Sustainable Agricultural Investment in Modern Greenhouses</p>
+          <div style="font-size: var(--text-sm);"><a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">facebook</a> &middot; <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">linkedin</a> &middot; <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer">youtube</a> &middot; <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">instagram</a></div>
+        </div>
+        <div class="stack">
+          <strong>Projects &amp; Policies</strong>
+          <ul class="stack" style="list-style: none; padding: 0; gap: var(--space-2);">
+            <li><a href="/en/projects">Projects</a></li>
+            <li><a href="/en/invest">Invest</a></li>
+            <li><a href="/en/how-it-works">How It Works</a></li>
+            <li><a href="/en/policies">Policies</a></li>
+            <li><a href="/login">Investor &amp; Staff Login</a></li>
+          </ul>
+        </div>
+        <div class="stack">
+          <strong>Contact</strong>
+          <ul class="stack" style="list-style: none; padding: 0; gap: var(--space-2); font-size: var(--text-sm);">
+            <li><a href="tel:+20 100 000 0000" dir="ltr" style="unicode-bidi: isolate;">+20 100 000 0000</a></li>
+            <li><a href="mailto:info@ehtyajatak.com">info@ehtyajatak.com</a></li>
+            <li>New Cairo — Fifth Settlement, Egypt</li>
+            <li>Sunday – Thursday: 9:00 AM – 5:00 PM</li>
+            <li><a href="https://wa.me/201000000000" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <span>© 2026 Ehtyajatak for Sustainable Development. All rights reserved.</span>
+        <span>English (LTR) • العربية (RTL)</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-fab no-print" href="https://wa.me/201000000000" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

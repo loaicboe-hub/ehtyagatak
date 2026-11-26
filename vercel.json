@@ -1,9 +1,4 @@
 {
-  "version": 2,
-  "rewrites": [
-    {
-      "source": "/((?!api/|assets/|css/|js/|foundation/).*)",
-      "destination": "/api"
-    }
-  ]
+  "cleanUrls": true,
+  "trailingSlash": false
 }
