@@ -1,4 +1,7 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "node scripts/generate-static.mjs",
+  "outputDirectory": "public",
   "cleanUrls": true,
   "trailingSlash": false
 }
