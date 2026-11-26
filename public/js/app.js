@@ -228,7 +228,7 @@ function initSplashScreen() {
     setTimeout(() => {
       document.documentElement.classList.remove('splash-pending');
       splash.classList.remove('is-exiting');
-    }, 500);
+    }, 600);
   };
 
   skipBtn?.addEventListener('click', finishSplash);
@@ -236,7 +236,7 @@ function initSplashScreen() {
     if (e.key === 'Escape' && !closed) finishSplash();
   }, { once: true });
 
-  exitTimer = setTimeout(finishSplash, 2400);
+  exitTimer = setTimeout(finishSplash, 4400);
 }
 
 document.addEventListener('DOMContentLoaded', () => {

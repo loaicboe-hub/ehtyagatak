@@ -390,9 +390,9 @@
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(7, 29, 17, 0.86) 0%,
-    rgba(11, 41, 25, 0.56) 48%,
-    rgba(20, 83, 45, 0.22) 100%
+    rgba(7, 29, 17, 0.80) 0%,
+    rgba(11, 41, 25, 0.42) 45%,
+    rgba(20, 83, 45, 0.08) 100%
   );
   z-index: 1;
 }
@@ -400,9 +400,9 @@
 [dir="rtl"] .page-hero__scrim {
   background: linear-gradient(
     270deg,
-    rgba(7, 29, 17, 0.86) 0%,
-    rgba(11, 41, 25, 0.56) 48%,
-    rgba(20, 83, 45, 0.22) 100%
+    rgba(7, 29, 17, 0.80) 0%,
+    rgba(11, 41, 25, 0.42) 45%,
+    rgba(20, 83, 45, 0.08) 100%
   );
 }
 
@@ -532,7 +532,7 @@
   cursor: not-allowed;
 }
 
-/* --- Animated Intro Splash Screen (~2.4s, 60fps SVG + CSS Keyframes) --- */
+/* --- Animated Intro Splash Screen (~4.4s, 60fps SVG + CSS Keyframes) --- */
 .splash-overlay {
   display: none;
   position: fixed;
@@ -544,7 +544,7 @@
   justify-content: center;
   padding: var(--space-6);
   opacity: 1;
-  transition: opacity 480ms cubic-bezier(0.22, 1, 0.36, 1), transform 480ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 600ms cubic-bezier(0.22, 1, 0.36, 1), transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
   font-family: 'Cairo', 'IBM Plex Sans Arabic', Tahoma, sans-serif;
 }
 
@@ -558,7 +558,7 @@ html.splash-pending body {
 
 .splash-overlay.is-exiting {
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(-12px);
   pointer-events: none;
 }
 
@@ -608,30 +608,30 @@ html.splash-pending body {
   overflow: visible;
 }
 
-/* Stage 1 (0.0s - 0.7s): Ascending Golden Zigzag Growth Arrow */
+/* Stage 1 (0.1s - 0.9s): Ascending Golden Zigzag Growth Arrow */
 .splash-growth-line {
   stroke-dasharray: 280;
   stroke-dashoffset: 280;
-  animation: splashDraw280 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.05s forwards;
+  animation: splashDraw280 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
 }
 
 .splash-growth-head {
   stroke-dasharray: 60;
   stroke-dashoffset: 60;
-  animation: splashDraw60 0.22s ease-out 0.52s forwards;
+  animation: splashDraw60 0.28s ease-out 0.72s forwards;
 }
 
-/* Stage 2 (0.6s - 1.4s): Greenhouse Arches & Sprouting Leaves */
+/* Stage 2 (0.8s - 1.8s): Greenhouse Arches & Sprouting Leaves */
 .splash-arch--gold {
   stroke-dasharray: 620;
   stroke-dashoffset: 620;
-  animation: splashDraw620 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.58s forwards;
+  animation: splashDraw620 0.95s cubic-bezier(0.22, 1, 0.36, 1) 0.82s forwards;
 }
 
 .splash-arch--emerald {
   stroke-dasharray: 380;
   stroke-dashoffset: 380;
-  animation: splashDraw380 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.72s forwards;
+  animation: splashDraw380 0.85s cubic-bezier(0.22, 1, 0.36, 1) 1.02s forwards;
 }
 
 .splash-leaves {
@@ -639,10 +639,10 @@ html.splash-pending body {
   transform-box: fill-box;
   transform-origin: 50% 90%;
   transform: scale(0.35) translateY(14px);
-  animation: splashSprout 0.62s cubic-bezier(0.16, 1, 0.3, 1) 0.78s forwards;
+  animation: splashSprout 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1.15s forwards;
 }
 
-/* Stage 3 (1.3s - 1.9s): Brand Typography Reveal */
+/* Stage 3 (1.7s - 2.5s): Brand Typography Reveal */
 .splash-brand {
   display: flex;
   flex-direction: column;
@@ -657,7 +657,7 @@ html.splash-pending body {
   color: #FFFFFF;
   opacity: 0;
   transform: translateY(14px);
-  animation: splashFadeUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) 1.28s forwards;
+  animation: splashFadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 1.75s forwards;
 }
 
 .splash-subtitle {
@@ -666,10 +666,10 @@ html.splash-pending body {
   color: #D4AF37;
   opacity: 0;
   transform: translateY(12px);
-  animation: splashFadeUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) 1.48s forwards;
+  animation: splashFadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 2.05s forwards;
 }
 
-/* Stage 4 (1.8s - 2.4s): Golden Pulse & Tagline */
+/* Stage 4 (2.3s - 4.4s): Golden Pulse & Tagline Display */
 .splash-footer {
   display: inline-flex;
   align-items: center;
@@ -677,7 +677,7 @@ html.splash-pending body {
   margin-block-start: var(--space-2);
   opacity: 0;
   transform: translateY(10px);
-  animation: splashFadeUp 0.38s ease-out 1.76s forwards;
+  animation: splashFadeUp 0.5s ease-out 2.35s forwards;
 }
 
 .splash-pulse {
