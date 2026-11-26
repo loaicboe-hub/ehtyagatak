@@ -1,14 +1,18 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
+import { createRequire } from 'node:module';
+import { getEnvConfig, ROOT_DIR } from '../config/env.mjs';
+
+const require = createRequire(import.meta.url);
+
 let DatabaseSync = null;
 try {
-  const sqliteMod = await import('node:sqlite');
+  const sqliteMod = require('node:sqlite');
   DatabaseSync = sqliteMod.DatabaseSync;
 } catch (e) {
   DatabaseSync = null;
 }
-import { getEnvConfig, ROOT_DIR } from '../config/env.mjs';
 
 let _db = null;
 
