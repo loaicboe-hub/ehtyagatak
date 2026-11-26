@@ -1,7 +1,13 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
-import { DatabaseSync } from 'node:sqlite';
+let DatabaseSync = null;
+try {
+  const sqliteMod = await import('node:sqlite');
+  DatabaseSync = sqliteMod.DatabaseSync;
+} catch (e) {
+  DatabaseSync = null;
+}
 import { getEnvConfig, ROOT_DIR } from '../config/env.mjs';
 
 let _db = null;
@@ -17,6 +23,10 @@ export function getDb(customPath = null) {
   let dbPath = customPath || cfg.sqlitePath;
   if (!customPath && (process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME)) {
     dbPath = path.join(os.tmpdir(), 'ehtyajatak.sqlite');
+  }
+
+  if (!DatabaseSync) {
+    throw new Error('node:sqlite is not supported on this Node runtime (requires Node.js >= 22.5.0)');
   }
 
   try {
